@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CENV Automation Test Dashboard</title>
+    <!-- Include necessary CSS/JS libraries for dropdowns and styling -->
+    <!-- Example: Bootstrap, jQuery, Select2, Datepicker, etc. -->
+    <style>
+        /* Page header styling */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-header {
+            background-color: #BF1920; /* Red color code */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        /* Your existing CSS code */
+        .statusCount {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .statusBox {
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .passed {
+            background-color: green;
+        }
+
+        .failed {
+            background-color: red;
+        }
+
+        .skipped {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>CENV Automation Test Dashboard</h1>
+    </div>
+
+    <ul class="tabs">
+        <li class="tab"><a href="#home">Home</a></li>
+        <li class="tab"><a href="#dashboard">Dashboard</a></li>
+    </ul>
+
+    <div id="home" class="tabcontent">
+        <h2>Test Execution Dashboard</h2>
+
+        <form id="searchForm">
+            <label for="product">Product:</label>
+            <select id="product" name="product">
+                <!-- Options for Product dropdown -->
+            </select>
+
+            <label for="subproduct">Subproduct:</label>
+            <select id="subproduct" name="subproduct">
+                <!-- Options for Subproduct dropdown -->
+            </select>
+
+            <label for="primary_environment">Primary Environment:</label>
+            <select id="primary_environment" name="primary_environment">
+                <!-- Options for Primary Environment dropdown -->
+            </select>
+
+            <label for="nested_environment">Nested Environment:</label>
+            <select id="nested_environment" name="nested_environment">
+                <!-- Options for Nested Environment dropdown (Populated based on Primary Environment) -->
+            </select>
+
+            <label for="test_suite">Test Suite:</label>
+            <select id="test_suite" name="test_suite">
+                <!-- Options for Test Suite dropdown -->
+            </select>
+
+            <label for="execution_date">Execution Date:</label>
+            <input type="date" id="execution_date" name="execution_date">
+
+            <input type="submit" value="Search">
+        </form>
+
+        <div class="statusCount">
+            <div class="statusBox passed"></div>
+            <div class="statusBox failed"></div>
+            <div class="statusBox skipped"></div>
+        </div>
+
+        <div id="searchResults">
+            <table id="resultsTable" border="1">
+                <thead>
+                    <tr id="headerRow">
+                        <th>Test Case ID</th>
+                        <th>Status</th>
+                        <th>Failed Reason</th>
+                        <th>Oracle Module</th>
+                        <th>Product</th>
+                        <th>Primary Environment</th>
+                        <th>Nested Environment</th>
+                        <th>Execution Date</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody">
+                    <!-- Table body for search results -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="dashboard" class="tabcontent">
+        <!-- Dashboard content goes here -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Function to populate dropdown options
+            function populateDropdown(selector, options) {
+                var dropdown = $(selector);
+                dropdown.empty();
+                $.each(options, function (index, value) {
+                    dropdown.append($('<option></option>').attr('value', value).text(value));
+                });
+            }
+
+            // Function to fetch JSON data and populate dropdowns
+            function fetchDataAndPopulateDropdowns() {
+                $.getJSON('static/test_execution_data.json', function (data) {
+                    var products = [...new Set(data.map(item => item.Product))];
+                    var subproducts = [...new Set(data.map(item => item.Subproduct))];
+                    var primaryEnvironments = [...new Set(data.map(item => item['Primary Environment']))];
+                    var testSuites = [...new Set(data.map(item => item['Test Suite']))];
+
+                    products.unshift('All'); // Adding "All" option to product dropdown
+
+                    populateDropdown('#product', products);
+                    populateDropdown('#subproduct', subproducts);
+                    populateDropdown('#test_suite', testSuites);
+                    populateDropdown('#primary_environment', primaryEnvironments);
+
+                    $('#primary_environment').change(function () {
+                        var selectedPrimaryEnvironment = $(this).val();
+                        var nestedEnvironments = [...new Set(data.filter(item => item['Primary Environment'] === selectedPrimaryEnvironment).map(item => item['Nested Environment']))];
+                        populateDropdown('#nested_environment', nestedEnvironments);
+                    });
+                });
+            }
+
+            // Call the function to populate dropdowns on page load
+            fetchDataAndPopulateDropdowns();
+
+            // Form submission handling
+            $('#searchForm').submit(function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.post('/search', formData, function (response) {
+                    var tableBody = $('#resultsBody');
+                    tableBody.empty();
+                    $.each(response, function (index, item) {
+                        var row = $('<tr></tr>');
+                        row.append($('<td></td>').text(item['Test Case ID']));
+                        row.append($('<td></td>').text(item['Status']));
+                        row.append($('<td></td>').text(item['Failed Reason']));
+                        row.append($('<td></td>').text(item['Oracle Module']));
+                        row.append($('<td></td>').text(item['Product']));
+                        row.append($('<td></td>').text(item['Primary Environment']));
+                        row.append($('<td></td>').text(item['Nested Environment']));
+                        row.append($('<td></td>').text(item['Execution Date']));
+                        tableBody.append(row);
+                    });
+
+                    var passedCount = response.filter(item => item.Status === 'Passed').length;
+                    var failedCount = response.filter(item => item.Status === 'Failed').length;
+                    var skippedCount = response.filter(item => item.Status === 'Skipped').length;
+
+                    $('.passed').text('Passed: ' + passedCount).addClass('passed');
+                    $('.failed').text('Failed: ' + failedCount).addClass('failed');
+                    $('.skipped').text('Skipped: ' + skippedCount).addClass('skipped');
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tabs');
+            M.Tabs.init(tabs);
+        });
+    </script>
+</body>
+
+</html>
