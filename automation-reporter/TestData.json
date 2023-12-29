@@ -129,7 +129,7 @@
     "product": "Product-1",
     "sub_product": "Sub product-1",
     "environment": "staging",
-    "status": "passed",
+    "status": "failed",
     "executed_start_time": "2023-06-24 23:55:00",
     "executed_end_time": "2023-06-24 23:56:20",
     "release": "v1",
