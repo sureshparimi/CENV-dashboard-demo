@@ -1,0 +1,455 @@
+[
+  {
+    "suite_id": "1",
+    "suite": "UI-Test1",
+    "org": "TestOrg1",
+    "test_cases": [
+      {
+        "test_class_name": "Signup with new user",
+        "test_case_name": "Login-Signup",
+        "status": "failed",
+        "executed_start_time": "2023-06-25 23:55:02",
+        "executed_end_time": "2023-06-25 23:55:10",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:02"
+          },
+          {
+            "step_name": "signup with new user",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:04"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:06"
+          },
+          {
+            "step_name": "validate the user is on landing page",
+            "step_status": "failed",
+            "executed_at": "2023-06-25 23:55:10"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Login with existing user",
+        "test_case_name": "Login-Signup",
+        "status": "passed",
+        "executed_start_time": "2023-06-25 23:55:22",
+        "executed_end_time": "2023-06-25 23:55:30",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:22"
+          },
+          {
+            "step_name": "login to the account",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:24"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:26"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:30"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Update password using forgot password",
+        "test_case_name": "Login-Signup",
+        "status": "passed",
+        "executed_start_time": "2023-06-25 23:55:52",
+        "executed_end_time": "2023-06-25 23:56:00",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:52"
+          },
+          {
+            "step_name": "updates the password using forgot password",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:54"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:55:56"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:56:00"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Update profile info",
+        "test_case_name": "Profile Page",
+        "status": "passed",
+        "executed_start_time": "2023-06-25 23:56:12",
+        "executed_end_time": "2023-06-25 23:56:20",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:56:12"
+          },
+          {
+            "step_name": "login in to the account",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:56:14"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:56:16"
+          },
+          {
+            "step_name": "updates the profile info",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:56:18"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-25 23:56:20"
+          }
+        ]
+      }
+    ],
+    "product": "Product-1",
+    "sub_product": "Sub product-1",
+    "environment": "staging",
+    "status": "failed",
+    "executed_start_time": "2023-06-24 23:55:00",
+    "executed_end_time": "2023-06-24 23:56:20",
+    "release": "v1",
+    "build": "Build 1",
+    "logs": [
+      {
+        "name": "Report",
+        "path": "https://google.com"
+      },
+      {
+        "name": "Console",
+        "path": "https://microsoft.com"
+      },
+      {
+        "name": "Log",
+        "path": "https://global.canon"
+      }
+    ],
+    "test_type":  "Sanity"
+  },
+  {
+    "suite_id": "2",
+    "suite": "UI-Test2",
+    "org": "TestOrg1",
+    "test_cases": [
+      {
+        "test_class_name": "Signup with new user",
+        "test_case_name": "Login-Signup",
+        "status": "passed",
+        "executed_start_time": "2023-06-24 23:55:02",
+        "executed_end_time": "2023-06-24 23:55:10",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:02"
+          },
+          {
+            "step_name": "signup with new user",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:04"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:06"
+          },
+          {
+            "step_name": "validate the user is on landing page",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:10"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Login with existing user",
+        "test_case_name": "Login-Signup",
+        "status": "passed",
+        "executed_start_time": "2023-06-24 23:55:22",
+        "executed_end_time": "2023-06-24 23:55:30",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:22"
+          },
+          {
+            "step_name": "login to the account",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:24"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:26"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:30"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Update password using forgot password",
+        "test_case_name": "Login-Signup",
+        "status": "passed",
+        "executed_start_time": "2023-06-24 23:55:52",
+        "executed_end_time": "2023-06-24 23:56:00",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:52"
+          },
+          {
+            "step_name": "updates the password using forgot password",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:54"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:55:56"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:56:00"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Update profile info",
+        "test_case_name": "Profile Page",
+        "status": "passed",
+        "executed_start_time": "2023-06-24 23:56:12",
+        "executed_end_time": "2023-06-24 23:56:20",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:56:12"
+          },
+          {
+            "step_name": "login in to the account",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:56:14"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:56:16"
+          },
+          {
+            "step_name": "updates the profile info",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:56:18"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-24 23:56:20"
+          }
+        ]
+      }
+    ],
+    "product": "Product-1",
+    "sub_product": "Sub product-1",
+    "environment": "staging",
+    "status": "passed",
+    "executed_start_time": "2023-06-24 23:55:00",
+    "executed_end_time": "2023-06-24 23:56:20",
+    "release": "v1",
+    "build": "Build 1",
+    "logs": [
+      {
+        "name": "Report",
+        "path": "https://google.com"
+      },
+      {
+        "name": "Console",
+        "path": "https://microsoft.com"
+      },
+      {
+        "name": "Log",
+        "path": "https://global.canon"
+      }
+    ],
+    "test_type": "E2E Regression"
+  },
+  {
+    "suite_id": "3",
+    "suite": "UI-Test3",
+    "org": "TestOrg1",
+    "test_cases": [
+      {
+        "test_class_name": "Signup with new user",
+        "test_case_name": "Create Account",
+        "status": "passed",
+        "executed_start_time": "2023-06-26 23:55:02",
+        "executed_end_time": "2023-06-26 23:55:10",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:02"
+          },
+          {
+            "step_name": "signup with new user",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:04"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:06"
+          },
+          {
+            "step_name": "validate the user is on landing page",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:10"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Login with existing user",
+        "test_case_name": "Create Account",
+        "status": "passed",
+        "executed_start_time": "2023-06-26 23:55:22",
+        "executed_end_time": "2023-06-26 23:55:30",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:22"
+          },
+          {
+            "step_name": "login to the account",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:24"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:26"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:30"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Update password using forgot password",
+        "test_case_name": "Login-Signup",
+        "status": "passed",
+        "executed_start_time": "2023-06-26 23:55:52",
+        "executed_end_time": "2023-06-26 23:56:00",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:52"
+          },
+          {
+            "step_name": "updates the password using forgot password",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:54"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:55:56"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:56:00"
+          }
+        ]
+      },
+      {
+        "test_class_name": "Update profile info",
+        "test_case_name": "Profile Page",
+        "status": "passed",
+        "executed_start_time": "2023-06-26 23:56:12",
+        "executed_end_time": "2023-06-26 23:56:20",
+        "steps": [
+          {
+            "step_name": "navigate to the url \"https://google.com\"",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:56:12"
+          },
+          {
+            "step_name": "login in to the account",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:56:14"
+          },
+          {
+            "step_name": "click on the submit button",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:56:16"
+          },
+          {
+            "step_name": "updates the profile info",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:56:18"
+          },
+          {
+            "step_name": "validate last logged in date",
+            "step_status": "passed",
+            "executed_at": "2023-06-26 23:56:20"
+          }
+        ]
+      }
+    ],
+    "product": "Product-2",
+    "sub_product": "Sub product-3",
+    "environment": "dev1",
+    "status": "passed",
+    "executed_start_time": "2023-06-26 23:55:00",
+    "executed_end_time": "2023-06-26 23:56:20",
+    "release": "v2",
+    "build": "Build 2",
+    "logs": [
+      {
+        "name": "Report",
+        "path": "https://google.com"
+      },
+      {
+        "name": "Console",
+        "path": "https://microsoft.com"
+      },
+      {
+        "name": "Log",
+        "path": "https://global.canon"
+      }
+    ],
+    "test_type": "SIT"
+  }
+]
