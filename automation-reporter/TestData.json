@@ -7,7 +7,7 @@
       {
         "test_class_name": "Signup with new user",
         "test_case_name": "Login-Signup",
-        "status": "passed",
+        "status": "failed",
         "executed_start_time": "2023-06-25 23:55:02",
         "executed_end_time": "2023-06-25 23:55:10",
         "steps": [
@@ -129,7 +129,7 @@
     "product": "Product-1",
     "sub_product": "Sub product-1",
     "environment": "staging",
-    "status": "failed",
+    "status": "passed",
     "executed_start_time": "2023-06-24 23:55:00",
     "executed_end_time": "2023-06-24 23:56:20",
     "release": "v1",
