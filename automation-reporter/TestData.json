@@ -7,7 +7,7 @@
       {
         "test_class_name": "Signup with new user",
         "test_case_name": "Login-Signup",
-        "status": "success",
+        "status": "passed",
         "executed_start_time": "2023-06-25 23:55:02",
         "executed_end_time": "2023-06-25 23:55:10",
         "steps": [
