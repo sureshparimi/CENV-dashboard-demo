@@ -1,0 +1,40 @@
+[
+  {
+    "org": "TestOrg1",
+    "products": [
+      {
+        "product": "Product-1",
+        "subproducts": [
+          {
+            "subproduct": "Sub product-1",
+            "suites": [ "UI-Test1", "UI-Test2" ],
+            "env": [ "dev", "staging", "qa", "preprod" ]
+          },
+          {
+            "subproduct": "Sub product-2",
+            "suites": [ "Func-Test1", "Func-Test2" ],
+            "env": [ "sde", "uat", "qa", "prod" ]
+          }
+        ]
+      },
+      {
+        "product": "Product-2",
+        "subproducts": [
+          {
+            "subproduct": "Sub product-3",
+            "suites": [ "UI-Test3", "UI-Test4" ],
+            "env": [ "dev1", "staging1", "qa1", "preprod1" ]
+          },
+
+          {
+            "subproduct": "Sub product-4",
+            "suites": [ "Func-Test3", "Func-Test4" ],
+            "env": [ "sde1", "uat1", "qa1", "prod1" ]
+          }
+        ]
+      }
+    ],
+    "releases": [ "v1", "v2" ],
+    "builds": [ "Build 1", "Build 2" ]
+  }
+]
